@@ -11,7 +11,7 @@ searchBox.addEventListener("submit", async event => {
             const weather_data = await getWeatherData(city);
             displayWeatherInfo(weather_data)
         }
-        catch{
+        catch(error){
             console.log(error);
             displayError(error)
         }
