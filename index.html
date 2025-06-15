@@ -8,7 +8,13 @@
 </head>
 <body>
     <h1 class="title">Web_Weather</h1>
-    <div class="container">
+    <div id="toggle">
+            <label class="switch">
+                <input type="checkbox" class="input" onclick="changeMode()">
+                <span class = 'slider'></span>
+            </label>
+    </div>
+    <div class="container" >
         <form class="searchBox">
             <input type="text" class="search-bar" placeholder="Search">
             <button type="submit">
