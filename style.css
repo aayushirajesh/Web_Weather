@@ -11,12 +11,68 @@ body {
     background-image: url("assets/bg/day.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;            
+    background-repeat: no-repeat;  
+    transition: .6s;          
+}
+
+#toggle{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10; /* make sure it stays on top */
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input{
+    display: none;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slider::before{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: #78cdff;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.input:checked + .slider{
+    background: rgb(44, 43, 97);
+}
+
+.input:checked + .slider::before{
+    transform: translateX(26px);
+}
+
+.dark-mode{
+    background-image: url(assets/bg/night.png);
 }
 
 .title {
     position: absolute;
-    top: 20px;
+    top: 55px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5rem;
@@ -24,7 +80,7 @@ body {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     font-weight: bold;
     margin: 0;
-    z-index: 1;
+    z-index: 1;    /*ensure title stays on top, not hidden behind things */
 }
 
 .searchBox {
